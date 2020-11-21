@@ -1,4 +1,3 @@
-console.log('Hi')
 const express = require('express')
 const randomLocation = require('random-location')
 const bodyParser = require('body-parser')
