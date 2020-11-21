@@ -1,0 +1,55 @@
+1st Endpoint to fetch the random generated Point:
+Sample Request :
+
+POST http://localhost:3000/generatePoint
+Content-Type: application/json
+
+{
+"latitude":"37.7768006",
+"longitude":"-122.4187928"
+}
+
+Sample response (200 OK):
+{
+  "latitude": 37.78577985751174,
+  "longitude": -122.41942652636301
+}
+
+Description: Latitude and Longitude of the the ball are sent in the request body of the API. API generated a random point within a 1 km radius of the given co-ordinates.
+
+
+2nd Endpoint to Calculate the distance between the Ball cordinates and Goal cordinates.
+
+Sample request :
+POST http://localhost:3000/calculateDistance
+Content-Type: application/json
+
+{
+"latitude":"37.7768006",
+"longitude":"-122.4187928",
+"goalLatitude":"37.78425768458558",
+"goalLongitude":"-122.42515305276312"
+}
+
+Sample Response (200 OK):
+{
+  "Distance in KM": 0.8353539480902011
+}
+
+
+Error Handling:
+1) In case of invalid JSON in request Body:
+
+Response:
+StatusCode: 400 Bad Request
+{
+  "error": "Invalid JSON"
+}
+
+2) In case of incorrect endpoints:
+Response:
+StatusCode: 404 Not Found
+{
+  "status": 404,
+  "error": "Page Not found"
+}
